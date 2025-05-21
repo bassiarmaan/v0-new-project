@@ -36,7 +36,7 @@ export default function Home() {
       title: "Ball Speed Tracking",
       description: "Measure your shot speed with precision using advanced computer vision",
       icon: <Gauge className="h-6 w-6 text-white" />,
-      image: "/ball-tracker.png",
+      image: "/ball-tracker-new.png",
       color: "from-red-500 to-orange-500",
       imageClass: "", // Remove rotation class
       items: [
@@ -50,7 +50,7 @@ export default function Home() {
       title: "Shot Placement Heatmaps",
       description: "Visualize where your shots land to identify patterns and improve accuracy",
       icon: <Target className="h-6 w-6 text-white" />,
-      image: "/heatmap.png",
+      image: "/heatmap-new.png",
       color: "from-orange-500 to-yellow-500",
       imageClass: "", // No rotation
       items: [
@@ -239,7 +239,7 @@ export default function Home() {
             <div className="relative mx-auto max-w-2xl opacity-0 animate-[fadeIn_0.8s_0.8s_forwards]">
               <div className="relative z-10 rounded-xl overflow-hidden shadow-[0_0_100px_rgba(255,69,0,0.3)] border border-slate-700">
                 <Image
-                  src="/main-hero.png"
+                  src="/hero-image.png"
                   alt="PongPulse Ball Speed Tracking"
                   width={600}
                   height={350}
@@ -727,31 +727,25 @@ export default function Home() {
 
       {/* QR Code Modal */}
       <Dialog open={isQrModalOpen} onOpenChange={setIsQrModalOpen}>
-        <DialogContent className="bg-slate-900 border border-slate-700 text-white">
+        <DialogContent className="bg-slate-800 border-slate-700 text-white max-w-md">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold">Download PongPulse</DialogTitle>
-            <DialogDescription className="text-slate-300">
-              Scan this QR code with your iPhone camera to download PongPulse from the App Store.
+            <DialogTitle className="text-2xl font-bold text-center mb-2">Download PongPulse</DialogTitle>
+            <DialogDescription className="text-center text-slate-400 mb-6">
+              Scan the QR code with your iPhone to download the app from the App Store.
             </DialogDescription>
           </DialogHeader>
-          <div className="flex flex-col items-center justify-center p-6">
-            <div className="bg-white p-4 rounded-lg mb-4">
-              <Image
-                src="/qr-code.png"
-                alt="PongPulse App Store QR Code"
-                width={200}
-                height={200}
-                className="w-48 h-48"
-              />
-            </div>
-            <p className="text-center text-slate-300">
-              Or visit the{" "}
-              <a href="#" className="text-orange-500 hover:underline">
-                App Store
-              </a>{" "}
-              directly.
-            </p>
+          <div className="flex justify-center items-center p-4 bg-white rounded-lg overflow-hidden">
+            <Image
+              src="/qr-code.png"
+              alt="PongPulse App QR Code"
+              width={256}
+              height={256}
+              className="w-64 h-64"
+            />
           </div>
+          <p className="text-center text-sm text-slate-500 mt-4">
+            Requires iOS 16 or later. iPhone 11 or newer recommended.
+          </p>
         </DialogContent>
       </Dialog>
     </div>
